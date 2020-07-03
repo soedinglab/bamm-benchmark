@@ -1,3 +1,8 @@
 # hide the raw data
 data/raw/*
 
+#
+cmake-build-debug/
+.idea/
+*/__pycache__
+
