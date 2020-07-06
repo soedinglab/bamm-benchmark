@@ -5,4 +5,4 @@ data/raw/*
 cmake-build-debug/
 .idea/
 */__pycache__
-
+*/.ipynb_checkpoints/

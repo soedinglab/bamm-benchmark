@@ -15,6 +15,9 @@ from matplotlib import cycler
 from collections import defaultdict
 from matplotlib.offsetbox import TextArea, DrawingArea, OffsetImage, AnnotationBbox
 
+import warnings
+
+
 ## Resources from:
 ## https://matplotlib.org/users/customizing.html
 ## How to change color and plot styles? 
@@ -33,6 +36,8 @@ def wge_presentation():
     dpi = 300
     #mcolors = wanwan_colors()
 
+    warnings.filterwarnings('ignore')
+    
     if fontfamily == 'system':
         mpl.rcParams['font.family'] = 'sans-serif'
         mpl.rcParams['font.sans-serif'] = 'DejaVu Sans'
@@ -485,11 +490,11 @@ def wge_boxplot(meta_table, paras, axes):
     if paras.dotplot:
         sns.swarmplot(x=paras.labels, y=data, data=df, color=".25", ax=axes)
 
-    # label x ticks
+    # label x ticks if there are clusters
     if paras.ncluster:
         ncolumn = int( len(paras.labels) / paras.ncluster)
-        pad = int(ncolumn / 2)
-        axes.set_xticks(np.arange(paras.ncluster)*ncolumn+pad)
+        pad = float(ncolumn / 2)
+        axes.set_xticks(np.arange(paras.ncluster)*ncolumn+pad-0.5)
         axes.set_xticklabels(paras.nameclus)
     else:
         axes.tick_params(bottom = False, top = False, left = True, right = False, 
@@ -518,10 +523,8 @@ def wge_boxplot(meta_table, paras, axes):
     if paras.noticks:
         if not paras.ncluster:
             axes.set_xticklabels([' ']*len(paras.labels))
-    else:
-        axes.set_xticklabels(paras.labels, 
-                             rotation=45, 
-                             ha="center")
+    elif not paras.ncluster :
+        axes.set_xticklabels(paras.labels, rotation=45, ha="center")
     
     if paras.xlabel_box:
         axes.set_xlabel(paras.xlabel_box)

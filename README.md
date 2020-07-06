@@ -20,14 +20,15 @@ This repository stores the scripts and data for generating the resluts in the W 
     unzip data/raw/ENCODE.zip -d data/raw/ENCODE/
     unzip data/raw/HTSELEX.zip -d data/raw/HTSELEX/
 
-    # download data for CTCF analysis
-    curl -o data/processed/CTCF.zip  http://wwwuser.gwdg.de/~compbiol/www/bamm/benchmark/CTCF.zip
+    # download data for CTCF analysis (data size: 320G)
+    curl -o data/processed/CTCF.zip  http://wwwuser.gwdg.de/~compbiol/www/bamm/benchmark/CTCF
     unzip data/processed/CTCF.zip -d data/processed/CTCF/
 
 ## 3. Install tools
 
-    # Download the fast seeding tool PEnGmotif, which generate PWMs
-    
+    # Download the fast seeding tool PEnGmotif, which is used for de novo motif discovery with PWMs
+
+
 
 
 
