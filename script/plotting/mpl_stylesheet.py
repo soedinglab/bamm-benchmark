@@ -303,6 +303,52 @@ def wge_colors_2by5(deeper = False):
     else:
         return wge_colors_2by5
 
+    
+def wge_colors_4by3(deeper=False):
+    
+    wge_colors_4by3 = [
+        
+        "#f8cc8c",
+        "#f5b04d",
+        "#f29b1d",
+        "#c67a0c",
+
+        "#a1dbb1",
+        "#71c989",
+        "#4cba6b",
+        "#358a4d",
+
+        "#b2d4f5",
+        "#74abe2",
+        "#367dc4",
+        "#1866b4", 
+    ]
+
+    wge_colors_4by3_deeper = [
+
+        "#7d5926",
+        "#7d5926",
+        "#7d5926",
+        "#7d5926",
+        
+        "#3a6746",
+        "#3a6746",
+        "#3a6746",
+        "#3a6746",
+        
+        "#3e5a76",
+        "#3e5a76",
+        "#3e5a76",
+        "#3e5a76",
+                
+    ]
+    
+    if deeper:
+        return wge_colors_4by3_deeper
+    else:    
+        return wge_colors_4by3
+                    
+                    
 # Utiliy function to create dictionary 
 def multi_dict(K, type): 
     if K == 1: 
