@@ -1,8 +1,6 @@
 # About BaMM benchmark repository
 
-This repository stores the scripts and data for generating the resluts in the W Ge, et al. paper.
-
-### (C) Wanwan Ge, 2020-07
+This repository stores the scripts and data for generating the results in the W Ge, et al. paper (DOI: https://doi.org/10.1101/2020.07.12.197053).
 
 # Installing
 
@@ -45,15 +43,15 @@ This repository stores the scripts and data for generating the resluts in the W 
 
 ## 4. Install tools
 
-#### 1. Install the fast seeding program PEnGmotif
+#### I. Install the fast seeding program PEnGmotif
 
   [PEnG-motif](https://github.com/soedinglab/PEnG-motif)
 
-#### 2. Install the refinement program BaMMmotif2
+#### II. Install the refinement program BaMMmotif2
 
   [BaMMmotif2](https://github.com/soedinglab/BaMMmotif2)
 
-#### 3. Other tools that are included in this benchmark:
+#### III. Other tools that are included in this benchmark:
   * [MEME](http://meme-suite.org/doc/download.html), version 5.1.1
   * [CisFinder](https://lgsun.grc.nia.nih.gov/CisFinder/download.html)
   * [ChIPMunk](http://autosome.ru/ChIPMunk/), version 8
@@ -65,6 +63,13 @@ This repository stores the scripts and data for generating the resluts in the W 
 
    Edit paths in this path file `./script/bench/paths.cluster.sh`
 
+## 6. Submit jobs to the cluster
+    
+    ./script/bench/start_benchmark.slurm.sh
+
+## 7. Summarize the motif evaluations to get runtime and AvRec score
+
+    ./script/bench/summary_benchmark.sh
 
 
 
